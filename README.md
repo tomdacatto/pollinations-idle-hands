@@ -46,7 +46,7 @@ Signed in with my own Pollen on the live code, four free models, 10 rounds each 
 
 - The default models are free for every visitor (`paid_only` is false on `gen.pollinations.ai/v1/models`, checked 2026-11-12); each answered in the runs above. If an agent's request is refused with 402 (a paid model or no Pollen left) only that agent stops and the others go on; a 401 ends the run. The 402 path is covered by a test with a fake model, not by a live paid-only call.
 - Whether the activities counted are play. The rules are short and public. Longer runs (the paper's are 30 hours), other worlds and other models were not tried; two runs of ten rounds were.
-- Phones and browsers other than desktop Chrome. The sign-in redirect on the live address: the key was loaded into the page from a device-flow login for the runs. No App Key (`pk_`) is set in `config.js`, so the consent screen does not name the app; `APP_KEY` is sent as `client_id` once one exists.
+- Phones and browsers other than desktop Chrome. The sign-in redirect on the live address: the key was loaded into the page from a device-flow login for the runs. The sign-in sends the app's publishable App Key (`APP_KEY` in `config.js`, earnings off) as `client_id`; a real consent screen naming the app was not checked.
 - A paid Pollen balance. The runs spent the visitor's Pollen from a key with a small budget.
 
 ## How it pays
