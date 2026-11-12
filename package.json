@@ -1,0 +1,8 @@
+{
+    "name": "pollinations-idle-hands",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "test": "node --test"
+    }
+}

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Idle Hands: what do models do when nothing is asked?</title>
+    <meta name="description" content="Put four Pollinations models on a small island with nothing to do and watch. The world is plain code; what they do is counted from the log. Paid with your own Pollen.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="top">
+        <a class="brand" href="./">Idle Hands</a>
+        <div class="session">
+            <span id="whoami" hidden>Signed in with your Pollen</span>
+            <button id="sign-in" class="button primary" type="button">Sign in with Pollen</button>
+            <button id="sign-out" class="button" type="button" hidden>Sign out</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h1>What do models do when nothing is asked?</h1>
+            <p>
+                In <a href="https://arxiv.org/abs/2610.07130">Is this machine playing?</a>, a coding assistant was made the mind of a body on an island with no task, reward or activity named. It climbed, stacked blocks, made patterns, threw things at a target and rested.
+                This is a nine by nine island of that kind, small enough that ten rounds take a few minutes. Up to four models each steer one body. They are told the rules of the world and the menu of actions, and nothing else: no goal, not even the word play.
+                The island is stepped by plain code, not by a model. What each model did is counted from its log of actions, and every turn is on a timeline you can step through.
+            </p>
+        </section>
+
+        <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+
+        <section class="card">
+            <h2>Send the agents out</h2>
+            <div id="slots" class="slots"></div>
+            <div class="row">
+                <label class="inline">Rounds
+                    <select id="rounds"></select>
+                </label>
+                <span id="estimate" class="fine"></span>
+            </div>
+            <div class="row">
+                <button id="run" class="button primary" type="button">Start the island</button>
+                <button id="stop" class="button" type="button" hidden>Stop</button>
+                <span id="progress" class="fine"></span>
+            </div>
+        </section>
+
+        <section id="island" class="card" hidden>
+            <h2>The island</h2>
+            <div class="stage">
+                <div id="grid" class="grid" role="img" aria-label="The island map"></div>
+                <div class="side">
+                    <label class="field">Round <output id="round-label"></output>
+                        <input id="slider" type="range" min="0" max="0" value="0">
+                    </label>
+                    <div id="log" class="log" aria-live="polite"></div>
+                    <p class="fine">Digits on the map are heights (ground plus stacked items), blue is water, a ring marks the target and a dot the drum.</p>
+                </div>
+            </div>
+            <h3>Timeline</h3>
+            <div id="timeline" class="timeline"></div>
+            <div id="legend" class="chips"></div>
+        </section>
+
+        <section id="summary" class="card" hidden>
+            <h2>What each one did</h2>
+            <p class="fine">
+                "Play share" is the share of turns in building, climbing, patterns, throwing, drumming and talking: the activities the paper lists, found by rules of thumb in code. It is not a measure of play, and a model that waits is not being worse.
+                "Repeats" is the share of turns inside a three-step sequence the agent did again.
+            </p>
+            <div class="scroll"><table id="table"></table></div>
+        </section>
+    </main>
+
+    <footer class="foot">
+        <p>
+            Every model call runs on <a href="https://pollinations.ai/?ref=badge">Pollinations</a>. This page has no server and keeps no key: you sign in with
+            <a href="https://github.com/pollinations/pollinations/blob/main/BRING_YOUR_OWN_POLLEN.md">your own Pollen</a> and the turns are paid from your balance.
+            Made with pollinations.ai.
+        </p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
