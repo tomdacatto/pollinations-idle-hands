@@ -5,7 +5,7 @@ export const EXPIRY_DAYS = 1;
 
 // A publishable App Key (pk_) whose redirect URI is this page's address. Empty until one is created;
 // when set it is sent as client_id so the consent screen names the app. See BRING_YOUR_OWN_POLLEN.md.
-export const APP_KEY = "";
+export const APP_KEY = "pk_5ep6ybWmHS287qUb";
 
 // Agents start with these models, one each, when the live list has them. All are free for every visitor.
 export const DEFAULT_AGENT_MODELS = [
